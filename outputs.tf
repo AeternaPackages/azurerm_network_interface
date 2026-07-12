@@ -1,4 +1,9 @@
 # --- azurerm_network_interface ---
+output "network_interfaces_id" {
+  description = "Map of id values across all network_interfaces, keyed the same as var.network_interfaces"
+  value       = module.network_interfaces.network_interfaces_id
+}
+
 output "network_interfaces_accelerated_networking_enabled" {
   description = "Map of accelerated_networking_enabled values across all network_interfaces, keyed the same as var.network_interfaces"
   value       = module.network_interfaces.network_interfaces_accelerated_networking_enabled
@@ -90,6 +95,11 @@ output "network_interfaces_virtual_machine_id" {
 }
 
 # --- azurerm_network_interface_application_gateway_backend_address_pool_association ---
+output "network_interface_application_gateway_backend_address_pool_associations_id" {
+  description = "Map of id values across all network_interface_application_gateway_backend_address_pool_associations, keyed the same as var.network_interface_application_gateway_backend_address_pool_associations"
+  value       = module.network_interface_application_gateway_backend_address_pool_associations.network_interface_application_gateway_backend_address_pool_associations_id
+}
+
 output "network_interface_application_gateway_backend_address_pool_associations_backend_address_pool_id" {
   description = "Map of backend_address_pool_id values across all network_interface_application_gateway_backend_address_pool_associations, keyed the same as var.network_interface_application_gateway_backend_address_pool_associations"
   value       = module.network_interface_application_gateway_backend_address_pool_associations.network_interface_application_gateway_backend_address_pool_associations_backend_address_pool_id
@@ -106,6 +116,11 @@ output "network_interface_application_gateway_backend_address_pool_associations_
 }
 
 # --- azurerm_network_interface_application_security_group_association ---
+output "network_interface_application_security_group_associations_id" {
+  description = "Map of id values across all network_interface_application_security_group_associations, keyed the same as var.network_interface_application_security_group_associations"
+  value       = module.network_interface_application_security_group_associations.network_interface_application_security_group_associations_id
+}
+
 output "network_interface_application_security_group_associations_application_security_group_id" {
   description = "Map of application_security_group_id values across all network_interface_application_security_group_associations, keyed the same as var.network_interface_application_security_group_associations"
   value       = module.network_interface_application_security_group_associations.network_interface_application_security_group_associations_application_security_group_id
@@ -117,6 +132,11 @@ output "network_interface_application_security_group_associations_network_interf
 }
 
 # --- azurerm_network_interface_backend_address_pool_association ---
+output "network_interface_backend_address_pool_associations_id" {
+  description = "Map of id values across all network_interface_backend_address_pool_associations, keyed the same as var.network_interface_backend_address_pool_associations"
+  value       = module.network_interface_backend_address_pool_associations.network_interface_backend_address_pool_associations_id
+}
+
 output "network_interface_backend_address_pool_associations_backend_address_pool_id" {
   description = "Map of backend_address_pool_id values across all network_interface_backend_address_pool_associations, keyed the same as var.network_interface_backend_address_pool_associations"
   value       = module.network_interface_backend_address_pool_associations.network_interface_backend_address_pool_associations_backend_address_pool_id
@@ -133,6 +153,11 @@ output "network_interface_backend_address_pool_associations_network_interface_id
 }
 
 # --- azurerm_network_interface_nat_rule_association ---
+output "network_interface_nat_rule_associations_id" {
+  description = "Map of id values across all network_interface_nat_rule_associations, keyed the same as var.network_interface_nat_rule_associations"
+  value       = module.network_interface_nat_rule_associations.network_interface_nat_rule_associations_id
+}
+
 output "network_interface_nat_rule_associations_ip_configuration_name" {
   description = "Map of ip_configuration_name values across all network_interface_nat_rule_associations, keyed the same as var.network_interface_nat_rule_associations"
   value       = module.network_interface_nat_rule_associations.network_interface_nat_rule_associations_ip_configuration_name
