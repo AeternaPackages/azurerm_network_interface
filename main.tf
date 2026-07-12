@@ -5,7 +5,7 @@ locals {
     for k1, v1 in var.network_interfaces : {
       for k2, v2 in coalesce(v1.network_interface_application_gateway_backend_address_pool_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        network_interface_id = module.network_interfaces.network_interfaces["${k1}"].id
+        network_interface_id = module.network_interfaces.network_interfaces_id["${k1}"]
       })
     }
   ]...)
@@ -14,7 +14,7 @@ locals {
     for k1, v1 in var.network_interfaces : {
       for k2, v2 in coalesce(v1.network_interface_application_security_group_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        network_interface_id = module.network_interfaces.network_interfaces["${k1}"].id
+        network_interface_id = module.network_interfaces.network_interfaces_id["${k1}"]
       })
     }
   ]...)
@@ -23,7 +23,7 @@ locals {
     for k1, v1 in var.network_interfaces : {
       for k2, v2 in coalesce(v1.network_interface_backend_address_pool_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        network_interface_id = module.network_interfaces.network_interfaces["${k1}"].id
+        network_interface_id = module.network_interfaces.network_interfaces_id["${k1}"]
       })
     }
   ]...)
@@ -32,7 +32,7 @@ locals {
     for k1, v1 in var.network_interfaces : {
       for k2, v2 in coalesce(v1.network_interface_nat_rule_associations, {}) :
       "${k1}/${k2}" => merge(v2, {
-        network_interface_id = module.network_interfaces.network_interfaces["${k1}"].id
+        network_interface_id = module.network_interfaces.network_interfaces_id["${k1}"]
       })
     }
   ]...)
