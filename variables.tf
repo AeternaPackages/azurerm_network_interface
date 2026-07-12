@@ -44,7 +44,7 @@ EOT
     internal_dns_name_label        = optional(string)
     ip_forwarding_enabled          = optional(bool) # Default: false
     tags                           = optional(map(string))
-    ip_configuration = object({
+    ip_configuration = list(object({
       gateway_load_balancer_frontend_ip_configuration_id = optional(string)
       name                                               = string
       primary                                            = optional(bool)
@@ -53,7 +53,7 @@ EOT
       private_ip_address_version                         = optional(string) # Default: "IPv4"
       public_ip_address_id                               = optional(string)
       subnet_id                                          = optional(string)
-    })
+    }))
     network_interface_application_gateway_backend_address_pool_associations = optional(map(object({
       backend_address_pool_id = string
       ip_configuration_name   = string
