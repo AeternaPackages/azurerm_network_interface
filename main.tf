@@ -39,30 +39,30 @@ locals {
 }
 
 module "network_interfaces" {
-  source             = "git::https://github.com/AeternaModules/azurerm_network_interface.git?ref=v4.80.0"
+  source             = "git::https://github.com/AeternaModules/azurerm_network_interface.git?ref=v4.81.0"
   network_interfaces = local.network_interfaces
 }
 
 module "network_interface_application_gateway_backend_address_pool_associations" {
-  source                                                                  = "git::https://github.com/AeternaModules/azurerm_network_interface_application_gateway_backend_address_pool_association.git?ref=v4.80.0"
+  source                                                                  = "git::https://github.com/AeternaModules/azurerm_network_interface_application_gateway_backend_address_pool_association.git?ref=v4.81.0"
   network_interface_application_gateway_backend_address_pool_associations = local.network_interface_application_gateway_backend_address_pool_associations
   depends_on                                                              = [module.network_interfaces]
 }
 
 module "network_interface_application_security_group_associations" {
-  source                                                    = "git::https://github.com/AeternaModules/azurerm_network_interface_application_security_group_association.git?ref=v4.80.0"
+  source                                                    = "git::https://github.com/AeternaModules/azurerm_network_interface_application_security_group_association.git?ref=v4.81.0"
   network_interface_application_security_group_associations = local.network_interface_application_security_group_associations
   depends_on                                                = [module.network_interfaces]
 }
 
 module "network_interface_backend_address_pool_associations" {
-  source                                              = "git::https://github.com/AeternaModules/azurerm_network_interface_backend_address_pool_association.git?ref=v4.80.0"
+  source                                              = "git::https://github.com/AeternaModules/azurerm_network_interface_backend_address_pool_association.git?ref=v4.81.0"
   network_interface_backend_address_pool_associations = local.network_interface_backend_address_pool_associations
   depends_on                                          = [module.network_interfaces]
 }
 
 module "network_interface_nat_rule_associations" {
-  source                                  = "git::https://github.com/AeternaModules/azurerm_network_interface_nat_rule_association.git?ref=v4.80.0"
+  source                                  = "git::https://github.com/AeternaModules/azurerm_network_interface_nat_rule_association.git?ref=v4.81.0"
   network_interface_nat_rule_associations = local.network_interface_nat_rule_associations
   depends_on                              = [module.network_interfaces]
 }
